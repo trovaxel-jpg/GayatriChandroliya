@@ -18,7 +18,7 @@ export function Header() {
   return (
     <header className="sticky top-0 z-50 border-b border-sand-dark/60 bg-cream/90 backdrop-blur-md">
       <div className="container-page flex h-[72px] items-center justify-between py-4">
-        <a href="#top" className="font-display text-xl tracking-tight text-ink">
+        <a href="#top" className="font-display text-lg tracking-tight text-ink sm:text-xl">
           {SITE.name}
         </a>
 

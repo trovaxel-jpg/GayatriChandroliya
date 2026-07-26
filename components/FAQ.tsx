@@ -15,10 +15,6 @@ const FAQS = [
     a: "Absolutely. Our programs are designed with women 25 to 55 in mind, and many of our most consistent students are in their 40s and 50s. Every pose has a modification for stiffer joints or lower mobility.",
   },
   {
-    q: "Can men join the classes?",
-    a: "Our programs are designed specifically around the needs and goals of women, so class content, pacing and community are tailored to that experience.",
-  },
-  {
     q: "How are classes conducted?",
     a: "Classes run live over video call in small batches, with direct feedback on your form. Every session is also recorded and shared with you afterward.",
   },
