@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { motion, useReducedMotion } from "framer-motion";
 import { Play } from "lucide-react";
 import { CTAButton } from "./CTAButton";
@@ -80,15 +81,15 @@ export function Hero() {
               })}
           className="relative"
         >
-          <div className="relative aspect-[4/5] w-full overflow-hidden rounded-[2rem] bg-sand-dark/40">
-            {/* Replace with a real photograph of the instructor mid-practice */}
-            <div
-              role="img"
-              aria-label="Placeholder: instructor demonstrating a graceful standing yoga pose in soft natural light"
-              className="flex h-full w-full items-center justify-center bg-gradient-to-br from-sand via-sand-dark/50 to-sage-light/40 text-center text-sm text-ink-soft/70"
-            >
-              <span className="px-8">Hero photograph placeholder — instructor in a standing pose</span>
-            </div>
+          <div className="relative aspect-[4/5] w-full overflow-hidden rounded-[2rem] bg-[#F5F1E8]">
+            <Image
+              src="/images/gayatri-hero.png"
+              alt={`${SITE.instructorName} sitting in a meditative cross-legged pose`}
+              fill
+              priority
+              sizes="(min-width: 1024px) 40vw, 90vw"
+              className="object-contain p-4"
+            />
           </div>
 
           <div className="absolute -bottom-6 -left-6 hidden rounded-2xl border border-sand-dark bg-cream/95 px-6 py-5 shadow-xl backdrop-blur sm:block">
