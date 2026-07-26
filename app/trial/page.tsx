@@ -102,6 +102,50 @@ export default function TrialPage() {
           </div>
         </section>
 
+        <section className="bg-sand/40 py-20 md:py-24">
+          <div className="container-page max-w-3xl">
+            <h2 className="text-center text-3xl tracking-tight text-ink md:text-4xl">
+              How the session is structured
+            </h2>
+            <p className="mx-auto mt-5 max-w-xl text-center text-[15.5px] leading-relaxed text-ink-soft">
+              Each class is guided live by {SITE.instructorName}, who has
+              practiced yogasana and pranayam daily for {SITE.yearsPracticing}{" "}
+              years. Sessions include a balanced blend of asanas, breathing
+              techniques (pranayam), and guided relaxation — paced for
+              beginners and returning practitioners alike.
+            </p>
+
+            <div className="mt-10 space-y-4">
+              {[
+                {
+                  q: "I have no experience in yoga. Can I attend?",
+                  a: "Yes — the trial class is designed to welcome complete beginners. Every pose is taught from the ground up, and modifications are offered for stiffer joints or lower mobility.",
+                },
+                {
+                  q: "What do I need for the class?",
+                  a: "Just a yoga mat and a little open floor space. No other equipment is required.",
+                },
+                {
+                  q: "What happens after I book?",
+                  a: "You'll receive the class link and timing details directly, ahead of the Monday start date.",
+                },
+                {
+                  q: "What happens after the trial?",
+                  a: "There's no obligation to continue. If you'd like to keep practicing, you can enroll in a longer plan afterward.",
+                },
+              ].map((item) => (
+                <div
+                  key={item.q}
+                  className="rounded-2xl border border-sand-dark/70 bg-cream p-6"
+                >
+                  <h3 className="text-[15.5px] font-semibold text-ink">{item.q}</h3>
+                  <p className="mt-2 text-[14.5px] leading-relaxed text-ink-soft">{item.a}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
         <section className="bg-sage-deep py-20 text-cream md:py-24">
           <div className="container-page text-center">
             <h2 className="mx-auto max-w-xl text-3xl tracking-tight md:text-4xl">

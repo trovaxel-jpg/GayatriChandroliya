@@ -8,7 +8,6 @@ import { SITE } from "@/lib/config";
 const NAV_LINKS = [
   { href: "/about", label: "About Us" },
   { href: "/#benefits", label: "Benefits" },
-  { href: "/#programs", label: "Programs" },
   { href: "/#faq", label: "FAQ" },
   { href: "/trial", label: "₹99 Trial Class" },
 ];

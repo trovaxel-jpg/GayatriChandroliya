@@ -11,13 +11,13 @@ export const ENROLLMENT_URL = "https://superprofile.bio/yourprofile";
 export const TRIAL_ENROLLMENT_URL = "https://superprofile.bio/yourprofile/trial";
 
 export const SITE = {
-  name: "Aayama Yoga",
+  name: "Gayatri Chandroliya",
   tagline: "Feel Younger. Move Better. Live Stronger.",
   instructorName: "Gayatri Chandroliya",
   instructorAge: 48,
   yearsPracticing: 14,
-  domain: "https://aayamayoga.com",
-  email: "hello@aayamayoga.com",
-  instagram: "https://instagram.com/aayamayoga",
-  youtube: "https://youtube.com/@aayamayoga",
+  domain: "https://gayatrichandroliya.com",
+  email: "hello@gayatrichandroliya.com",
+  instagram: "https://instagram.com/gayatrichandroliya",
+  youtube: "https://youtube.com/@gayatrichandroliya",
 };

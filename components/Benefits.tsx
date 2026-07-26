@@ -1,82 +1,60 @@
-import {
-  Feather,
-  PersonStanding,
-  Scale,
-  Wind,
-  Footprints,
-  Sunrise,
-  Move,
-  Sprout,
-} from "lucide-react";
+import { Wind, Flame, Dumbbell, PersonStanding } from "lucide-react";
 import { Reveal } from "./Reveal";
 
-const BENEFITS = [
+const CATEGORIES = [
   {
-    icon: Feather,
-    title: "Better Flexibility",
-    copy: "Gradual, safe range-of-motion work that loosens tight hips, hamstrings and shoulders.",
+    icon: Wind,
+    title: "Be Calm",
+    points: ["Reduce stress", "Improve sleep quality", "Master breathing techniques"],
+  },
+  {
+    icon: Flame,
+    title: "Stay Active",
+    points: ["Move daily, safely", "Boost your metabolism", "Support natural energy"],
+  },
+  {
+    icon: Dumbbell,
+    title: "Get Stronger",
+    points: ["Build real strength", "Tone every muscle", "Strengthen your core"],
   },
   {
     icon: PersonStanding,
-    title: "Improved Posture",
-    copy: "Strengthen the muscles that hold you upright, so standing tall stops feeling like effort.",
-  },
-  {
-    icon: Scale,
-    title: "Weight Management",
-    copy: "Steady, sustainable movement that supports a healthy weight alongside your daily habits.",
-  },
-  {
-    icon: Wind,
-    title: "Reduced Stress",
-    copy: "Breath-led sequences that calm the nervous system and quiet a busy mind.",
-  },
-  {
-    icon: Footprints,
-    title: "Better Mobility",
-    copy: "Move through your day — stairs, floor, travel — with less stiffness and more ease.",
-  },
-  {
-    icon: Sunrise,
-    title: "Daily Energy",
-    copy: "Morning sequences designed to leave you alert and steady, not depleted.",
-  },
-  {
-    icon: Move,
-    title: "Better Balance",
-    copy: "Core and stability work that protects you as coordination naturally shifts with age.",
-  },
-  {
-    icon: Sprout,
-    title: "Healthy Habits",
-    copy: "A routine simple enough to keep — because consistency matters more than intensity.",
+    title: "Become Flexible",
+    points: ["Ease joint pain", "Increase mobility", "Relieve stiffness & tightness"],
   },
 ];
 
 export function Benefits() {
   return (
-    <section id="benefits" className="bg-sand/40 py-24 md:py-32">
+    <section id="benefits" className="bg-sand/40 py-20 md:py-24">
       <div className="container-page">
         <Reveal mode="fade">
           <p className="eyebrow text-center text-[12px] font-semibold uppercase text-sage-deep">
-            What Changes
+            Discover the Benefits
           </p>
         </Reveal>
         <Reveal mode="slide-up" delay={0.05}>
-          <h2 className="mx-auto mt-4 max-w-2xl text-center text-4xl tracking-tight text-ink md:text-5xl">
-            Eight things a consistent practice gives back
+          <h2 className="mx-auto mt-4 max-w-2xl text-center text-3xl tracking-tight text-ink md:text-4xl">
+            Transform your body, mind and soul
           </h2>
         </Reveal>
 
-        <div className="mt-14 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
-          {BENEFITS.map((b, i) => (
-            <Reveal key={b.title} mode="slide-up" delay={(i % 4) * 0.06}>
-              <div className="h-full rounded-2xl border border-sand-dark/70 bg-cream p-6 transition-shadow hover:shadow-md">
-                <span className="flex h-11 w-11 items-center justify-center rounded-full bg-sage-deep/10">
-                  <b.icon size={20} className="text-sage-deep" aria-hidden="true" />
+        <div className="mt-12 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
+          {CATEGORIES.map((c, i) => (
+            <Reveal key={c.title} mode="slide-up" delay={(i % 4) * 0.06}>
+              <div className="h-full rounded-2xl border border-sand-dark/70 bg-cream p-6 text-center transition-shadow hover:shadow-md">
+                <span className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-sage-deep/10">
+                  <c.icon size={24} className="text-sage-deep" aria-hidden="true" />
                 </span>
-                <h3 className="mt-5 text-[17px] font-semibold text-ink">{b.title}</h3>
-                <p className="mt-2 text-[14px] leading-relaxed text-ink-soft">{b.copy}</p>
+                <h3 className="mt-5 text-[17px] font-semibold text-ink">{c.title}</h3>
+                <ul className="mt-4 space-y-2 text-left text-[13.5px] text-ink-soft">
+                  {c.points.map((point) => (
+                    <li key={point} className="flex items-start gap-2">
+                      <span className="mt-1 text-sage-deep">✓</span>
+                      <span>{point}</span>
+                    </li>
+                  ))}
+                </ul>
               </div>
             </Reveal>
           ))}
