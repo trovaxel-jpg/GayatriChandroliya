@@ -79,16 +79,16 @@ export function Hero() {
                 animate: { opacity: 1, scale: 1 },
                 transition: { duration: 0.9, ease: [0.22, 1, 0.36, 1] as const },
               })}
-          className="relative"
+          className="relative mx-auto w-full max-w-md lg:max-w-none"
         >
-          <div className="relative aspect-[4/5] w-full overflow-hidden rounded-[2rem] bg-[#F5F1E8]">
+          <div className="relative aspect-[1404/1120] w-full">
             <Image
               src="/images/gayatri-hero.png"
               alt={`${SITE.instructorName} sitting in a meditative cross-legged pose`}
               fill
               priority
               sizes="(min-width: 1024px) 40vw, 90vw"
-              className="object-contain p-4"
+              className="object-contain"
             />
           </div>
 

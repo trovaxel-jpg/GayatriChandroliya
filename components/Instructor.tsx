@@ -35,21 +35,20 @@ export function Instructor() {
           <Reveal mode="slide-up" delay={0.1}>
             <div className="mt-7 space-y-5 text-[16px] leading-relaxed text-ink-soft">
               <p>
-                Fourteen years ago, yoga wasn&apos;t a business — it was
-                simply a habit she refused to skip. Early mornings, the same
-                unbroken routine, a quiet insistence on doing the
-                fundamentals well. That consistency is what people notice
-                first when they meet her: the ease in her spine, the
-                steadiness of her balance, the way she moves without strain.
+                For the past 14 years, Gayatri has taught yoga to students
+                in her own community — helping people work through weight
+                management, PCOS and PCOD, knee pain, low energy, and
+                stiffness, while building real flexibility and stamina
+                along the way. It started as in-person classes close to
+                home, built one consistent session at a time.
               </p>
               <p>
-                Most people are surprised when they learn her actual age.
-                It isn&apos;t a trick or a shortcut — it&apos;s the visible
-                result of a body that has been moved, stretched, and cared
-                for consistently, day after day, for fourteen years. She
-                doesn&apos;t promise you&apos;ll look a certain way. She
-                teaches the same discipline that shaped her own practice,
-                and lets your consistency do the rest.
+                Now she&apos;s taking that same practice online — with the
+                goal of growing a wider community of people committed to
+                becoming healthier and stronger together, no matter where
+                they&apos;re starting from. The approach hasn&apos;t
+                changed: patient teaching, real fundamentals, and a pace
+                that respects your body.
               </p>
             </div>
           </Reveal>
