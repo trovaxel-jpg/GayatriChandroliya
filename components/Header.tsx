@@ -6,7 +6,7 @@ import { CTAButton } from "./CTAButton";
 import { SITE } from "@/lib/config";
 
 const NAV_LINKS = [
-  { href: "/about", label: "About Us" },
+  { href: "/#about", label: "About" },
   { href: "/#benefits", label: "Benefits" },
   { href: "/#faq", label: "FAQ" },
   { href: "/trial", label: "₹99 Trial Class" },

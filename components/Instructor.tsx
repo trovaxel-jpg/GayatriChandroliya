@@ -21,7 +21,7 @@ export function Instructor() {
         <div>
           <Reveal mode="fade">
             <p className="eyebrow text-[12px] font-semibold uppercase text-sage-deep">
-              The Teacher
+              Meet Your Yoga Guide
             </p>
           </Reveal>
 

@@ -1,9 +1,11 @@
 import { Header } from "@/components/Header";
 import { Hero } from "@/components/Hero";
 import { TrustStats } from "@/components/TrustStats";
+import { AboutIntro } from "@/components/AboutIntro";
 import { Instructor } from "@/components/Instructor";
 import { Benefits } from "@/components/Benefits";
-// Programs, WhyChooseUs and Transformations are intentionally left out —
+import { Testimonials } from "@/components/Testimonials";
+// Programs, WhyChooseUs are intentionally left out —
 // shortened homepage to mirror Kamya's leaner structure. Component files
 // are still in components/ if you want to bring any of them back later.
 import { FAQ } from "@/components/FAQ";
@@ -17,8 +19,10 @@ export default function Home() {
       <main>
         <Hero />
         <TrustStats />
-        <Instructor />
+        <AboutIntro />
         <Benefits />
+        <Instructor />
+        <Testimonials />
         <FAQ />
         <FinalCTA />
       </main>
