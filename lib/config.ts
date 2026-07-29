@@ -10,6 +10,24 @@ export const ENROLLMENT_URL = "https://superprofile.bio/yourprofile";
 // Superprofile "trial" product/event is published.
 export const TRIAL_ENROLLMENT_URL = "https://superprofile.bio/yourprofile/trial";
 
+// ---------------------------------------------------------------------------
+// ⚠️ PLACEHOLDER CHECKOUT LINKS — one per plan.
+// Each plan needs its OWN Superprofile product (Recurring Membership type,
+// same as we discussed for the trial). Once each is published, replace the
+// matching URL below — every pricing card for that plan reads from here.
+// ---------------------------------------------------------------------------
+export const PLAN_CHECKOUT_URLS = {
+  womensWellness: "https://superprofile.bio/yourprofile/womens-wellness",
+  weightLossFitness: "https://superprofile.bio/yourprofile/weight-loss-fitness",
+  agelessVitality: "https://superprofile.bio/yourprofile/ageless-vitality",
+};
+
+// ---------------------------------------------------------------------------
+// ⚠️ REMINDER: fill in the real live batch timing once Gayatri confirms it.
+// This placeholder shows on every plan page until you update it.
+// ---------------------------------------------------------------------------
+export const BATCH_TIMING = "Mon–Sat, 7:00 AM (timing to be confirmed)";
+
 export const SITE = {
   name: "Gayatri Chandroliya",
   tagline: "Feel Younger. Move Better. Live Stronger.",
@@ -18,6 +36,8 @@ export const SITE = {
   yearsPracticing: 14,
   domain: "https://gayatrichandroliya.com",
   email: "hello@gayatrichandroliya.com",
+  phone: "+91 00000 00000",
+  city: "Your City, India",
   instagram: "https://instagram.com/gayatrichandroliya",
   youtube: "https://youtube.com/@gayatrichandroliya",
 };
