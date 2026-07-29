@@ -1,10 +1,13 @@
 import { Reveal } from "./Reveal";
 import { BreathLine } from "./BreathLine";
+import { LeafMotif, ScatterDots } from "./Decorative";
 import { SITE } from "@/lib/config";
 
 export function Instructor() {
   return (
-    <section id="instructor" className="py-24 md:py-32">
+    <section id="instructor" className="relative overflow-hidden bg-sand/30 py-24 md:py-32">
+      <LeafMotif className="pointer-events-none absolute -left-3 top-8 -z-10 h-[180px] w-[75px] hidden sm:block" />
+      <ScatterDots className="pointer-events-none absolute right-10 top-16 -z-10 h-20 w-24 hidden lg:block" />
       <div className="container-page grid items-center gap-16 lg:grid-cols-[0.9fr_1.1fr]">
         <Reveal mode="slide-right">
           <div className="relative aspect-[4/5] w-full overflow-hidden rounded-[2rem] bg-sand-dark/40">

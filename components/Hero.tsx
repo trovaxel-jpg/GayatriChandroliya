@@ -5,6 +5,7 @@ import { motion, useReducedMotion } from "framer-motion";
 import { Play } from "lucide-react";
 import { CTAButton } from "./CTAButton";
 import { BreathLine } from "./BreathLine";
+import { OrganicBlob, LeafMotif, ScatterDots } from "./Decorative";
 import { SITE } from "@/lib/config";
 
 export function Hero() {
@@ -21,6 +22,10 @@ export function Hero() {
 
   return (
     <section id="top" className="relative overflow-hidden pt-14 pb-20 md:pt-20 md:pb-28">
+      <OrganicBlob className="pointer-events-none absolute -right-24 top-0 -z-10 h-[420px] w-[420px]" />
+      <LeafMotif className="pointer-events-none absolute -left-4 bottom-0 -z-10 h-[220px] w-[90px] hidden sm:block" />
+      <ScatterDots className="pointer-events-none absolute right-8 bottom-10 -z-10 h-24 w-28 hidden lg:block" />
+
       <div className="container-page grid items-center gap-14 lg:grid-cols-[1.05fr_0.95fr]">
         <div>
           <motion.p

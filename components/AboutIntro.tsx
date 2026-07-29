@@ -1,6 +1,7 @@
 import { BadgeCheck, HeartHandshake, Users, PlayCircle } from "lucide-react";
 import { Reveal } from "./Reveal";
 import { BreathLine } from "./BreathLine";
+import { OrganicBlob, LeafMotif } from "./Decorative";
 import { SITE } from "@/lib/config";
 
 const CREDENTIALS = [
@@ -20,7 +21,12 @@ const CREDENTIALS = [
 
 export function AboutIntro() {
   return (
-    <section id="about" className="py-20 md:py-28">
+    <section id="about" className="relative overflow-hidden py-20 md:py-28">
+      <LeafMotif className="pointer-events-none absolute -right-2 top-6 -z-10 h-[200px] w-[80px] hidden sm:block" />
+      <OrganicBlob
+        className="pointer-events-none absolute -left-28 bottom-0 -z-10 h-[360px] w-[360px]"
+        color="#E3D0A8"
+      />
       <div className="container-page">
         <div className="mx-auto max-w-2xl text-center">
           <Reveal mode="fade">
