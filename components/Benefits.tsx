@@ -1,37 +1,33 @@
-import { Wind, Flame, Dumbbell, PersonStanding } from "lucide-react";
+import Image from "next/image";
 import { Reveal } from "./Reveal";
 
 const CATEGORIES = [
   {
-    icon: Wind,
+    image: "/images/benefit-be-calm.png",
     title: "Be Calm",
     points: ["Reduce stress", "Improve sleep quality", "Master breathing techniques"],
     bg: "#E3EFEF",
-    iconBg: "#CFE3E2",
     titleColor: "#2F6F6B",
   },
   {
-    icon: Flame,
+    image: "/images/benefit-stay-active.png",
     title: "Stay Active",
     points: ["Move daily, safely", "Boost your metabolism", "Support natural energy"],
     bg: "#FCEFE3",
-    iconBg: "#F8DDBF",
     titleColor: "#C4712E",
   },
   {
-    icon: Dumbbell,
+    image: "/images/benefit-get-stronger.png",
     title: "Get Stronger",
     points: ["Build real strength", "Tone every muscle", "Strengthen your core"],
     bg: "#F3EBF6",
-    iconBg: "#E5D3ED",
     titleColor: "#7A4E96",
   },
   {
-    icon: PersonStanding,
+    image: "/images/benefit-become-flexible.png",
     title: "Become Flexible",
     points: ["Ease joint pain", "Increase mobility", "Relieve stiffness & tightness"],
     bg: "#EAF1E3",
-    iconBg: "#D3E4C4",
     titleColor: "#4F7A34",
   },
 ];
@@ -66,12 +62,15 @@ export function Benefits() {
                     <li key={point}>✓ {point}</li>
                   ))}
                 </ul>
-                <span
-                  className="mt-6 flex h-20 w-20 items-center justify-center rounded-full"
-                  style={{ backgroundColor: c.iconBg }}
-                >
-                  <c.icon size={34} style={{ color: c.titleColor }} aria-hidden="true" />
-                </span>
+                <div className="relative mt-6 aspect-square w-full max-w-[180px] overflow-hidden rounded-2xl">
+                  <Image
+                    src={c.image}
+                    alt={`Illustration representing the ${c.title} benefit`}
+                    fill
+                    sizes="200px"
+                    className="object-cover"
+                  />
+                </div>
               </div>
             </Reveal>
           ))}
