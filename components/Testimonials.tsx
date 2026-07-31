@@ -15,7 +15,7 @@ const TESTIMONIALS = [
     program: "Weight Loss & Anti-Ageing",
     summary:
       "After 40, Savitri noticed her energy dropping and weight creeping up — even climbing stairs left her tired. Since joining Gayatri's classes, she feels noticeably more active, has lost weight steadily, and says her clothes fit better than they have in years.",
-    audioSrc: "/audio/savitri-testimonial.mp3",
+    audioSrc: "/audio/aaliyah-testimonial.mp3",
     portrait: "/images/testimonial-savitri.png",
     cardBg: "#FCEEE1",
     accent: "#9C5F26",
@@ -26,7 +26,7 @@ const TESTIMONIALS = [
     program: "Women's Wellness Yoga",
     summary:
       "Aaliyah used to dread her periods every month — painful cramps in the first two days and constant stress alongside it. After joining Gayatri's classes, her cramps became far more manageable and the anxiety around that time of month eased considerably.",
-    audioSrc: "/audio/aaliyah-testimonial.mp3",
+    audioSrc: "/audio/savitri-testimonial.mp3",
     portrait: "/images/testimonial-aaliyah.png",
     cardBg: "#E3EFEF",
     accent: "#2F6F6B",
