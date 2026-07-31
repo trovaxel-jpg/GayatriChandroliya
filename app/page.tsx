@@ -20,9 +20,9 @@ export default function Home() {
         <Hero />
         <TrustStats />
         <AboutIntro />
+        <Testimonials />
         <Benefits />
         <Instructor />
-        <Testimonials />
         <FAQ />
         <FinalCTA />
       </main>

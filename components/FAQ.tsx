@@ -11,14 +11,6 @@ const FAQS = [
     a: "Yes — most of our students start with zero yoga experience. Classes teach fundamentals from the ground up, and pace is adjusted so nobody is rushed into poses they aren't ready for.",
   },
   {
-    q: "I'm over 40 — is this still safe for me?",
-    a: "Absolutely. Our programs are designed with women 25 to 55 in mind, and many of our most consistent students are in their 40s and 50s. Every pose has a modification for stiffer joints or lower mobility.",
-  },
-  {
-    q: "How are classes conducted?",
-    a: "Classes run live over video call in small batches, with direct feedback on your form. Every session is also recorded and shared with you afterward.",
-  },
-  {
     q: "Do I need any equipment?",
     a: "A yoga mat and enough open floor space to stretch out are enough to begin. A strap and block can help later on, but they aren't required to start.",
   },
@@ -27,20 +19,8 @@ const FAQS = [
     a: "You'll get the full recording so you can catch up on your own time. Missing an occasional class won't set you back.",
   },
   {
-    q: "Is there a trial before I commit?",
-    a: "Yes — reach out through the enrollment page and we'll walk you through a trial session so you can experience the teaching style before enrolling.",
-  },
-  {
-    q: "How soon will I notice a difference?",
-    a: "Most students notice easier movement and better sleep within the first few weeks. Visible changes in flexibility and posture build gradually with consistent practice over months.",
-  },
-  {
     q: "I have a knee or back issue — can I still practice?",
     a: "Let us know your specific concern when you enroll. Sequences are adapted around common issues, though for serious or diagnosed conditions we recommend a note from your doctor first.",
-  },
-  {
-    q: "What time zone are classes held in?",
-    a: "Classes are scheduled around Indian Standard Time, with multiple slots through the day to fit around work and family routines.",
   },
 ];
 

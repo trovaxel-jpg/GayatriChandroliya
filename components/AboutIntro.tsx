@@ -75,6 +75,7 @@ export function AboutIntro() {
                 controls
                 playsInline
                 preload="metadata"
+                poster="/images/intro-poster.jpg"
                 className="h-full w-full object-cover"
               >
                 <source src="/video/intro.mp4" type="video/mp4" />
