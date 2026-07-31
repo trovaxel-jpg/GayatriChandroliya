@@ -1,4 +1,4 @@
-import { BadgeCheck, HeartHandshake, Users, PlayCircle } from "lucide-react";
+import { BadgeCheck, HeartHandshake, Users } from "lucide-react";
 import { Reveal } from "./Reveal";
 import { BreathLine } from "./BreathLine";
 import { OrganicBlob, LeafMotif } from "./Decorative";
@@ -66,16 +66,16 @@ export function AboutIntro() {
               </p>
             </div>
 
-            {/* Intro video placeholder — swap for the embedded video/thumbnail once ready */}
-            <div className="relative mt-7 aspect-video w-full overflow-hidden rounded-2xl bg-[#F5F1E8]">
-              <div
-                role="img"
-                aria-label={`Placeholder: intro video of ${SITE.instructorName}`}
-                className="flex h-full w-full flex-col items-center justify-center gap-2 text-center text-sm text-ink-soft/70"
+            {/* Real intro video */}
+            <div className="relative mx-auto mt-7 aspect-[9/16] w-full max-w-xs overflow-hidden rounded-2xl bg-black">
+              <video
+                controls
+                playsInline
+                preload="metadata"
+                className="h-full w-full object-cover"
               >
-                <PlayCircle size={36} className="text-sage-deep/50" aria-hidden="true" />
-                <span className="px-8">Intro video placeholder</span>
-              </div>
+                <source src="/video/intro.mp4" type="video/mp4" />
+              </video>
             </div>
           </div>
         </Reveal>
