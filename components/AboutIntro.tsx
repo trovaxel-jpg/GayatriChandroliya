@@ -67,7 +67,10 @@ export function AboutIntro() {
             </div>
 
             {/* Real intro video */}
-            <div className="relative mx-auto mt-7 aspect-[9/16] w-full max-w-xs overflow-hidden rounded-2xl bg-black">
+            <div
+              id="about-video"
+              className="relative mx-auto mt-7 aspect-[9/16] w-full max-w-xs scroll-mt-24 overflow-hidden rounded-2xl bg-black"
+            >
               <video
                 controls
                 playsInline

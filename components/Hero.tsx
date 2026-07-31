@@ -60,7 +60,7 @@ export function Hero() {
           <motion.div {...fadeUp(0.28)} className="mt-9 flex flex-wrap items-center gap-4">
             <CTAButton>Start Your Journey</CTAButton>
             <a
-              href="#instructor"
+              href="#about-video"
               className="inline-flex items-center gap-3 text-[15px] font-semibold text-ink transition-colors hover:text-sage-deep"
               aria-label="Watch introduction video"
             >
