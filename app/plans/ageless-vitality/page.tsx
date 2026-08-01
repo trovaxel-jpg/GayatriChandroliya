@@ -18,11 +18,6 @@ export default function AgelessVitalityPlanPage() {
         "Sequences focused on flexibility, posture, and daily energy",
         "Pranayam techniques for lasting stamina",
       ]}
-      tiers={[
-        { duration: "1 Month", originalPrice: 1999, price: 999 },
-        { duration: "3 Months", originalPrice: 4999, price: 2499, badge: "Best Value" },
-        { duration: "6 Months", originalPrice: 8999, price: 4499 },
-      ]}
       testimonials={[
         // Placeholder — replace with real student name + quote + audioSrc once available.
       ]}
