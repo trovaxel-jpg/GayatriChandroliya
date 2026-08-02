@@ -13,6 +13,7 @@ export default function WomensWellnessPlanPage() {
       title="Women's Wellness Yoga"
       tagline="Yoga designed around what women's bodies actually need."
       checkoutUrl={PLAN_CHECKOUT_URLS.womensWellness}
+      photoSrc="/images/plan-womens-wellness.png"
       photoPlaceholderLabel={`${SITE.instructorName} teaching a Women's Wellness session — photo placeholder`}
       offerings={[
         "Sequences paced around hormonal and menstrual health",

@@ -21,7 +21,7 @@ const CREDENTIALS = [
 
 export function AboutIntro() {
   return (
-    <section id="about" className="relative overflow-hidden py-20 md:py-28">
+    <section id="about" className="relative overflow-hidden py-12 md:py-16">
       <LeafMotif className="pointer-events-none absolute -right-2 top-6 -z-10 h-[200px] w-[80px] hidden sm:block" />
       <OrganicBlob
         className="pointer-events-none absolute -left-28 bottom-0 -z-10 h-[360px] w-[360px]"

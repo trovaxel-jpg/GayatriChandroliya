@@ -65,7 +65,7 @@ function FAQItem({ q, a }: { q: string; a: string }) {
 
 export function FAQ() {
   return (
-    <section id="faq" className="py-24 md:py-32">
+    <section id="faq" className="py-14 md:py-18">
       <div className="container-page max-w-3xl">
         <Reveal mode="fade">
           <p className="eyebrow text-center text-[12px] font-semibold uppercase text-sage-deep">

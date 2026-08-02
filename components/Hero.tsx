@@ -6,7 +6,7 @@ import { Play } from "lucide-react";
 import { CTAButton } from "./CTAButton";
 import { BreathLine } from "./BreathLine";
 import { OrganicBlob, LeafMotif, ScatterDots } from "./Decorative";
-import { SITE } from "@/lib/config";
+import { SITE, TRIAL_ENROLLMENT_URL } from "@/lib/config";
 
 export function Hero() {
   const shouldReduceMotion = useReducedMotion();
@@ -21,7 +21,7 @@ export function Hero() {
         };
 
   return (
-    <section id="top" className="relative overflow-hidden pt-14 pb-20 md:pt-20 md:pb-28">
+    <section id="top" className="relative overflow-hidden pt-10 pb-12 md:pt-14 md:pb-16">
       <OrganicBlob className="pointer-events-none absolute -right-24 top-0 -z-10 h-[420px] w-[420px]" />
       <LeafMotif className="pointer-events-none absolute -left-4 bottom-0 -z-10 h-[220px] w-[90px] hidden sm:block" />
       <ScatterDots className="pointer-events-none absolute right-8 bottom-10 -z-10 h-24 w-28 hidden lg:block" />
@@ -58,7 +58,7 @@ export function Hero() {
           </motion.p>
 
           <motion.div {...fadeUp(0.28)} className="mt-9 flex flex-wrap items-center gap-4">
-            <CTAButton>Start Your Journey</CTAButton>
+            <CTAButton href={TRIAL_ENROLLMENT_URL}>Start Your Journey</CTAButton>
             <a
               href="#about-video"
               className="inline-flex items-center gap-3 text-[15px] font-semibold text-ink transition-colors hover:text-sage-deep"

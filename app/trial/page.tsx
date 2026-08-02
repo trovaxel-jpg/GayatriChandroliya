@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { CalendarDays, IndianRupee, Video, Users } from "lucide-react";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
@@ -64,13 +65,13 @@ export default function TrialPage() {
         <section className="py-4 md:py-8">
           <div className="container-page">
             <div className="relative mx-auto aspect-video w-full max-w-3xl overflow-hidden rounded-[1.75rem] bg-sand-dark/40">
-              <div
-                role="img"
-                aria-label={`Placeholder: photo or video of ${SITE.instructorName} teaching a live class`}
-                className="flex h-full w-full items-center justify-center bg-gradient-to-br from-sand via-sand-dark/50 to-sage-light/40 text-center text-sm text-ink-soft/70"
-              >
-                <span className="px-8">Trial class photo/video placeholder</span>
-              </div>
+              <Image
+                src="/images/plan-trial.png"
+                alt={`${SITE.instructorName} in a deep backbend`}
+                fill
+                sizes="(min-width: 1024px) 768px, 90vw"
+                className="object-cover"
+              />
             </div>
           </div>
         </section>

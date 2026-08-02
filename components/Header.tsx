@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { Menu, X, ChevronDown } from "lucide-react";
 import { CTAButton } from "./CTAButton";
-import { SITE } from "@/lib/config";
+import { SITE, TRIAL_ENROLLMENT_URL } from "@/lib/config";
 
 const NAV_LINKS = [
   { href: "/#top", label: "Home" },
@@ -75,7 +75,7 @@ export function Header() {
         </nav>
 
         <div className="hidden lg:block">
-          <CTAButton className="!px-6 !py-3 text-[13px]">Start Your Journey</CTAButton>
+          <CTAButton href={TRIAL_ENROLLMENT_URL} className="!px-6 !py-3 text-[13px]">Start Your Journey</CTAButton>
         </div>
 
         <button
@@ -116,7 +116,7 @@ export function Header() {
               </a>
             ))}
             <div className="mt-2 px-3">
-              <CTAButton className="w-full">Start Your Journey</CTAButton>
+              <CTAButton href={TRIAL_ENROLLMENT_URL} className="w-full">Start Your Journey</CTAButton>
             </div>
           </nav>
         </div>

@@ -13,6 +13,7 @@ export default function WeightLossFitnessPlanPage() {
       title="Weight Loss & Fitness Yoga"
       tagline="Build real strength and lose weight the sustainable way."
       checkoutUrl={PLAN_CHECKOUT_URLS.weightLossFitness}
+      photoSrc="/images/plan-weight-loss-fitness.png"
       photoPlaceholderLabel={`${SITE.instructorName} teaching a Weight Loss & Fitness session — photo placeholder`}
       offerings={[
         "Sequences built to boost metabolism and burn fat",

@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { Reveal } from "./Reveal";
 import { BreathLine } from "./BreathLine";
 import { LeafMotif, ScatterDots } from "./Decorative";
@@ -5,19 +6,19 @@ import { SITE } from "@/lib/config";
 
 export function Instructor() {
   return (
-    <section id="instructor" className="relative overflow-hidden bg-sand/30 py-24 md:py-32">
+    <section id="instructor" className="relative overflow-hidden bg-sand/30 py-14 md:py-18">
       <LeafMotif className="pointer-events-none absolute -left-3 top-8 -z-10 h-[180px] w-[75px] hidden sm:block" />
       <ScatterDots className="pointer-events-none absolute right-10 top-16 -z-10 h-20 w-24 hidden lg:block" />
       <div className="container-page grid items-center gap-16 lg:grid-cols-[0.9fr_1.1fr]">
         <Reveal mode="slide-right">
           <div className="relative aspect-[4/5] w-full overflow-hidden rounded-[2rem] bg-sand-dark/40">
-            <div
-              role="img"
-              aria-label={`Placeholder: ${SITE.instructorName} demonstrating a deep backbend with calm, controlled breath`}
-              className="flex h-full w-full items-center justify-center bg-gradient-to-br from-sage-light/30 via-sand to-sand-dark/50 text-center text-sm text-ink-soft/70"
-            >
-              <span className="px-8">Instructor photograph placeholder — mid-practice</span>
-            </div>
+            <Image
+              src="/images/instructor-portrait.png"
+              alt={`${SITE.instructorName} in a namaste pose`}
+              fill
+              sizes="(min-width: 1024px) 40vw, 90vw"
+              className="object-cover"
+            />
           </div>
         </Reveal>
 

@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { CalendarClock, Video, FileVideo, Users2 } from "lucide-react";
 import { Header } from "./Header";
 import { Footer } from "./Footer";
@@ -19,6 +20,7 @@ export function PlanPage({
   checkoutUrl,
   offerings,
   testimonials,
+  photoSrc,
   photoPlaceholderLabel,
 }: {
   title: string;
@@ -26,6 +28,8 @@ export function PlanPage({
   checkoutUrl: string;
   offerings: string[];
   testimonials: PlanTestimonial[];
+  /** Path under /public/images — if omitted, a placeholder box is shown instead */
+  photoSrc?: string;
   photoPlaceholderLabel: string;
 }) {
   return (
@@ -51,17 +55,27 @@ export function PlanPage({
           </div>
         </section>
 
-        {/* Photo placeholder */}
+        {/* Photo */}
         <section className="py-4 md:py-8">
           <div className="container-page">
             <div className="relative mx-auto aspect-video w-full max-w-3xl overflow-hidden rounded-[1.75rem] bg-sand-dark/40">
-              <div
-                role="img"
-                aria-label={`Placeholder: ${photoPlaceholderLabel}`}
-                className="flex h-full w-full items-center justify-center bg-gradient-to-br from-sand via-sand-dark/50 to-sage-light/40 text-center text-sm text-ink-soft/70"
-              >
-                <span className="px-8">{photoPlaceholderLabel}</span>
-              </div>
+              {photoSrc ? (
+                <Image
+                  src={photoSrc}
+                  alt={photoPlaceholderLabel}
+                  fill
+                  sizes="(min-width: 1024px) 768px, 90vw"
+                  className="object-cover"
+                />
+              ) : (
+                <div
+                  role="img"
+                  aria-label={`Placeholder: ${photoPlaceholderLabel}`}
+                  className="flex h-full w-full items-center justify-center bg-gradient-to-br from-sand via-sand-dark/50 to-sage-light/40 text-center text-sm text-ink-soft/70"
+                >
+                  <span className="px-8">{photoPlaceholderLabel}</span>
+                </div>
+              )}
             </div>
           </div>
         </section>

@@ -3,7 +3,7 @@ import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { CTAButton } from "@/components/CTAButton";
 import { BreathLine } from "@/components/BreathLine";
-import { SITE } from "@/lib/config";
+import { SITE, TRIAL_ENROLLMENT_URL } from "@/lib/config";
 
 export const metadata: Metadata = {
   title: "About Us",
@@ -70,7 +70,7 @@ export default function AboutPage() {
               </div>
 
               <div className="mt-9">
-                <CTAButton>Start Your Journey</CTAButton>
+                <CTAButton href={TRIAL_ENROLLMENT_URL}>Start Your Journey</CTAButton>
               </div>
             </div>
           </div>

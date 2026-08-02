@@ -34,7 +34,7 @@ const CATEGORIES = [
 
 export function Benefits() {
   return (
-    <section id="benefits" className="bg-sand/40 py-20 md:py-24">
+    <section id="benefits" className="bg-sand/40 py-12 md:py-16">
       <div className="container-page">
         <Reveal mode="fade">
           <p className="eyebrow text-center text-[12px] font-semibold uppercase text-sage-deep">

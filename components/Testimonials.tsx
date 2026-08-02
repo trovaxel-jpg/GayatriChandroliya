@@ -35,7 +35,7 @@ const TESTIMONIALS = [
 
 export function Testimonials() {
   return (
-    <section id="testimonials" className="py-20 md:py-24">
+    <section id="testimonials" className="py-12 md:py-16">
       <div className="container-page">
         <p className="eyebrow text-center text-[12px] font-semibold uppercase text-sage-deep">
           Real Stories

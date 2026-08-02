@@ -4,7 +4,7 @@ import { Reveal } from "./Reveal";
 
 export function FinalCTA() {
   return (
-    <section className="bg-sage-deep py-24 text-cream md:py-28">
+    <section className="bg-sage-deep py-14 text-cream md:py-16">
       <div className="container-page text-center">
         <Reveal mode="fade">
           <p className="eyebrow text-[12px] font-semibold uppercase text-sage-light">
