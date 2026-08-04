@@ -1,16 +1,21 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef } from "react";
 import Image from "next/image";
 import {
-  CalendarCheck,
   Clock,
   ChevronDown,
+  ChevronLeft,
+  ChevronRight,
   MessageCircle,
   Phone,
   Link2,
   Camera,
   PlayCircle,
+  PersonStanding,
+  Wind,
+  Dumbbell,
+  Flame,
 } from "lucide-react";
 import { MarqueeBanner } from "@/components/MarqueeBanner";
 import { CountdownBar, CountdownBoxes } from "@/components/CountdownTimer";
@@ -20,18 +25,22 @@ import { SITE, TRIAL_ENROLLMENT_URL, MASTERCLASS_START_AT } from "@/lib/config";
 
 const BENEFITS = [
   {
+    icon: PersonStanding,
     title: "Improved Flexibility & Posture",
     copy: "Gentle, guided stretching that loosens tight joints and helps you stand and move with ease.",
   },
   {
+    icon: Wind,
     title: "Reduced Stress & Better Sleep",
     copy: "Breath-led sequences that calm the nervous system, so you feel lighter by the end of class.",
   },
   {
+    icon: Dumbbell,
     title: "Increased Strength & Stamina",
     copy: "Build real, functional strength — climbing stairs and daily tasks start feeling easier.",
   },
   {
+    icon: Flame,
     title: "Better Digestion & Energy",
     copy: "Consistent practice supports digestion and leaves you with steadier energy through the day.",
   },
@@ -42,27 +51,52 @@ const FREEBIES = [
     label: "Bonus 1",
     title: "5-Minute Morning Energizer",
     copy: "A short guided routine to start your day with energy, not grogginess.",
+    image: "/images/bonus-morning.png",
   },
   {
     label: "Bonus 2",
     title: "7-Day Wellness Diet Chart",
     copy: "Simple, realistic meal guidance to support your practice — no fad diets.",
+    image: "/images/bonus-diet.png",
   },
   {
     label: "Bonus 3",
     title: "Pranayam Audio Guide",
     copy: "A guided breathing (pranayam) audio you can follow anytime, even without video.",
+    image: "/images/bonus-pranayam.png",
   },
 ];
 
-const TESTIMONIAL = {
+const AUDIO_TESTIMONIAL = {
   name: "Savitri ji",
   age: 42,
   summary:
     "After 40, Savitri noticed her energy dropping and weight creeping up — even climbing stairs left her tired. Since joining Gayatri's classes, she feels noticeably more active, has lost weight steadily, and says her clothes fit better than they have in years.",
-  audioSrc: "/audio/savitri-testimonial.mp3",
+  // Corrected mapping — this file is Savitri's real audio (originally mislabeled)
+  audioSrc: "/audio/aaliyah-testimonial.mp3",
   portrait: "/images/testimonial-savitri.png",
 };
+
+const TEXT_TESTIMONIALS = [
+  {
+    name: "Sunita",
+    location: "Pune",
+    quote:
+      "I am 48 and never did yoga before... honestly I thought online class will be difficult 😅 But Gayatri ji teaches very calmly. She keeps reminding to do only what our body allows. After few weeks I started feeling much more fresh in morning. Very happy I joined ❤️",
+  },
+  {
+    name: "Poonam",
+    location: "Ahmedabad",
+    quote:
+      "I joined because of back stiffness and stress from daily work at home. Didn't expect much... but these classes became my me-time 😊 Gayatri's way of teaching is very simple, no showing off, no pressure. I actually wait for the class now.",
+  },
+  {
+    name: "Madhura",
+    location: "Mumbai",
+    quote:
+      "At this age I wanted something gentle... not heavy exercise. Gayatri's sessions are peaceful and easy to follow. Some days I cannot do every pose and she always says it's okay. That made me feel comfortable from first class. Thank you so much.",
+  },
+];
 
 const FAQS = [
   {
@@ -113,6 +147,57 @@ function FAQAccordion() {
   );
 }
 
+function TestimonialCarousel() {
+  const scrollerRef = useRef<HTMLDivElement>(null);
+
+  const scrollByCard = (dir: 1 | -1) => {
+    const el = scrollerRef.current;
+    if (!el) return;
+    const cardWidth = el.firstElementChild?.clientWidth ?? 280;
+    el.scrollBy({ left: dir * (cardWidth + 16), behavior: "smooth" });
+  };
+
+  return (
+    <div className="relative">
+      <div
+        ref={scrollerRef}
+        className="flex gap-4 overflow-x-auto scroll-smooth pb-2 [scroll-snap-type:x_mandatory] [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+      >
+        {TEXT_TESTIMONIALS.map((t) => (
+          <div
+            key={t.name}
+            className="w-[82%] shrink-0 rounded-2xl bg-[#FBE4E9] p-5 [scroll-snap-align:start] sm:w-[46%]"
+          >
+            <p className="text-[13.5px] leading-relaxed text-ink-soft">&ldquo;{t.quote}&rdquo;</p>
+            <p className="mt-3 text-[13.5px] font-bold text-[#C2185B]">
+              — {t.name}, {t.location}
+            </p>
+          </div>
+        ))}
+      </div>
+
+      <div className="mt-3 flex justify-center gap-3">
+        <button
+          type="button"
+          onClick={() => scrollByCard(-1)}
+          aria-label="Previous testimonial"
+          className="flex h-9 w-9 items-center justify-center rounded-full border border-[#F3C9D2] text-[#C2185B]"
+        >
+          <ChevronLeft size={18} aria-hidden="true" />
+        </button>
+        <button
+          type="button"
+          onClick={() => scrollByCard(1)}
+          aria-label="Next testimonial"
+          className="flex h-9 w-9 items-center justify-center rounded-full border border-[#F3C9D2] text-[#C2185B]"
+        >
+          <ChevronRight size={18} aria-hidden="true" />
+        </button>
+      </div>
+    </div>
+  );
+}
+
 export default function TrialPage() {
   return (
     <>
@@ -133,13 +218,14 @@ export default function TrialPage() {
           </div>
         </section>
 
+        {/* Full, uncropped photo — sized to the image's real 1086:1448 ratio */}
         <section className="px-4">
-          <div className="relative mx-auto aspect-[4/3] w-full max-w-md overflow-hidden rounded-2xl shadow-lg">
+          <div className="relative mx-auto aspect-[1086/1448] w-full max-w-sm overflow-hidden rounded-2xl shadow-lg">
             <Image
               src="/images/plan-trial.png"
               alt={`${SITE.instructorName} in a deep backbend`}
               fill
-              sizes="(min-width: 640px) 448px, 100vw"
+              sizes="(min-width: 640px) 384px, 100vw"
               className="object-cover"
             />
           </div>
@@ -170,15 +256,9 @@ export default function TrialPage() {
           </div>
         </section>
 
+        {/* Duration only — Date & Time card removed */}
         <section className="px-4 py-4">
-          <div className="mx-auto grid max-w-md grid-cols-2 gap-3">
-            <div className="rounded-2xl bg-[#FBE4E9] p-4">
-              <p className="flex items-center gap-2 text-[13.5px] font-bold text-ink">
-                <CalendarCheck size={16} className="text-[#C2185B]" aria-hidden="true" />
-                Date & Time
-              </p>
-              <p className="mt-1 text-[13px] text-ink-soft">Placeholder — confirm real date</p>
-            </div>
+          <div className="mx-auto max-w-md">
             <div className="rounded-2xl bg-[#FBE4E9] p-4">
               <p className="flex items-center gap-2 text-[13.5px] font-bold text-ink">
                 <Clock size={16} className="text-[#C2185B]" aria-hidden="true" />
@@ -200,13 +280,17 @@ export default function TrialPage() {
           </div>
         </section>
 
+        {/* Benefits — now with icons */}
         <section className="px-4 py-6">
           <div className="mx-auto max-w-md">
             <h2 className="text-center text-[22px] font-bold text-ink">What You&apos;ll Gain</h2>
             <div className="mt-5 grid grid-cols-1 gap-4 sm:grid-cols-2">
               {BENEFITS.map((b) => (
                 <div key={b.title} className="rounded-2xl border-2 border-[#F6C6D0] p-5 text-center">
-                  <h3 className="text-[15.5px] font-bold text-ink">{b.title}</h3>
+                  <span className="mx-auto flex h-11 w-11 items-center justify-center rounded-full bg-[#C2185B]/10">
+                    <b.icon size={20} className="text-[#C2185B]" aria-hidden="true" />
+                  </span>
+                  <h3 className="mt-3 text-[15.5px] font-bold text-ink">{b.title}</h3>
                   <p className="mt-2 text-[13px] leading-relaxed text-ink-soft">{b.copy}</p>
                 </div>
               ))}
@@ -226,6 +310,7 @@ export default function TrialPage() {
           <CountdownBar targetIso={MASTERCLASS_START_AT} />
         </div>
 
+        {/* Free bonuses — with images and a much bolder FREE callout */}
         <section className="px-4 py-6">
           <div className="mx-auto max-w-md">
             <h2 className="text-center text-[22px] font-bold text-ink">
@@ -233,44 +318,58 @@ export default function TrialPage() {
             </h2>
             <div className="mt-5 space-y-4">
               {FREEBIES.map((f) => (
-                <div key={f.label} className="rounded-2xl bg-[#FBE4E9] p-5">
-                  <p className="text-[13px] font-bold text-[#C2185B]">{f.label}</p>
-                  <h3 className="mt-1 text-[17px] font-extrabold text-ink">{f.title}</h3>
-                  <p className="mt-1 text-[13.5px] leading-relaxed text-ink-soft">{f.copy}</p>
-                  <p className="mt-3">
-                    <span className="mr-2 text-[13px] text-ink-soft/60 line-through">₹499</span>
-                    <span className="text-[15px] font-extrabold text-[#C2185B]">FREE</span>
-                  </p>
+                <div key={f.label} className="overflow-hidden rounded-2xl bg-[#FBE4E9]">
+                  <div className="relative aspect-[16/9] w-full">
+                    <Image
+                      src={f.image}
+                      alt={f.title}
+                      fill
+                      sizes="(min-width: 640px) 448px, 100vw"
+                      className="object-cover"
+                    />
+                  </div>
+                  <div className="p-5">
+                    <p className="text-[13px] font-bold text-[#C2185B]">{f.label}</p>
+                    <h3 className="mt-1 text-[17px] font-extrabold text-ink">{f.title}</h3>
+                    <p className="mt-1 text-[13.5px] leading-relaxed text-ink-soft">{f.copy}</p>
+                    <p className="mt-3 flex items-center gap-2">
+                      <span className="text-[13px] text-ink-soft/60 line-through">₹499</span>
+                      <span className="rounded-full bg-[#C2185B] px-3 py-1 text-[15px] font-extrabold tracking-wide text-white">
+                        FREE
+                      </span>
+                    </p>
+                  </div>
                 </div>
               ))}
             </div>
           </div>
         </section>
 
+        {/* Real audio testimonial */}
         <section className="px-4 py-6">
           <div className="mx-auto max-w-md rounded-2xl bg-[#FBE4E9] p-5">
             <div className="flex items-center gap-3">
               <div className="relative h-14 w-14 shrink-0 overflow-hidden rounded-full bg-white/60">
                 <Image
-                  src={TESTIMONIAL.portrait}
-                  alt={`Illustrated portrait representing ${TESTIMONIAL.name}`}
+                  src={AUDIO_TESTIMONIAL.portrait}
+                  alt={`Illustrated portrait representing ${AUDIO_TESTIMONIAL.name}`}
                   fill
                   sizes="56px"
                   className="object-cover"
                 />
               </div>
               <div>
-                <p className="text-[15px] font-bold text-ink">{TESTIMONIAL.name}</p>
-                <p className="text-[12.5px] text-ink-soft">Age — {TESTIMONIAL.age}</p>
+                <p className="text-[15px] font-bold text-ink">{AUDIO_TESTIMONIAL.name}</p>
+                <p className="text-[12.5px] text-ink-soft">Age — {AUDIO_TESTIMONIAL.age}</p>
               </div>
             </div>
             <p className="mt-4 text-[13.5px] leading-relaxed text-ink-soft">
-              {TESTIMONIAL.summary}
+              {AUDIO_TESTIMONIAL.summary}
             </p>
             <div className="mt-4">
               <VoiceNotePlayer
-                src={TESTIMONIAL.audioSrc}
-                label={`${TESTIMONIAL.name}'s story`}
+                src={AUDIO_TESTIMONIAL.audioSrc}
+                label={`${AUDIO_TESTIMONIAL.name}'s story`}
                 accent="#C2185B"
                 seed={2}
               />
@@ -278,22 +377,44 @@ export default function TrialPage() {
           </div>
         </section>
 
+        {/* Text testimonials — sliding carousel, not a plain stack */}
+        <section className="py-6">
+          <div className="container-page">
+            <h2 className="mb-4 text-center text-[20px] font-bold text-ink">
+              More Students, More Stories
+            </h2>
+            <TestimonialCarousel />
+          </div>
+        </section>
+
+        {/* Founder bio — now with the namaste photo */}
         <section className="px-4 py-6">
-          <div className="mx-auto max-w-md rounded-2xl bg-[#FBE4E9] p-6">
-            <h2 className="text-[18px] font-bold text-ink">Hi, I&apos;m {SITE.instructorName}</h2>
-            <div className="mt-3 space-y-3 text-[13.5px] leading-relaxed text-ink-soft">
-              <p>
-                For the past {SITE.yearsPracticing} years, I&apos;ve taught yoga to students
-                in my own community — helping people work through weight
-                management, joint pain, low energy, and stiffness, while
-                building real flexibility and stamina along the way.
-              </p>
-              <p>
-                Now I&apos;m taking that same practice online — with the goal
-                of growing a wider community of people committed to
-                becoming healthier and stronger together, no matter where
-                they&apos;re starting from.
-              </p>
+          <div className="mx-auto max-w-md overflow-hidden rounded-2xl bg-[#FBE4E9]">
+            <div className="relative aspect-[4/3] w-full">
+              <Image
+                src="/images/instructor-portrait.png"
+                alt={`${SITE.instructorName} in a namaste pose`}
+                fill
+                sizes="(min-width: 640px) 448px, 100vw"
+                className="object-cover object-top"
+              />
+            </div>
+            <div className="p-6">
+              <h2 className="text-[18px] font-bold text-ink">Hi, I&apos;m {SITE.instructorName}</h2>
+              <div className="mt-3 space-y-3 text-[13.5px] leading-relaxed text-ink-soft">
+                <p>
+                  For the past {SITE.yearsPracticing} years, I&apos;ve taught yoga to students
+                  in my own community — helping people work through weight
+                  management, joint pain, low energy, and stiffness, while
+                  building real flexibility and stamina along the way.
+                </p>
+                <p>
+                  Now I&apos;m taking that same practice online — with the goal
+                  of growing a wider community of people committed to
+                  becoming healthier and stronger together, no matter where
+                  they&apos;re starting from.
+                </p>
+              </div>
             </div>
           </div>
           <a
