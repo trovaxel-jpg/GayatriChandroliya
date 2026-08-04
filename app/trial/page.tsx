@@ -218,14 +218,14 @@ export default function TrialPage() {
           </div>
         </section>
 
-        {/* Full, uncropped photo — sized to the image's real 1086:1448 ratio */}
+        {/* Full, uncropped photo — sized to the image's real 1067:767 ratio */}
         <section className="px-4">
-          <div className="relative mx-auto aspect-[1086/1448] w-full max-w-sm overflow-hidden rounded-2xl shadow-lg">
+          <div className="relative mx-auto aspect-[1067/767] w-full max-w-md overflow-hidden rounded-2xl shadow-lg">
             <Image
               src="/images/plan-trial.png"
               alt={`${SITE.instructorName} in a deep backbend`}
               fill
-              sizes="(min-width: 640px) 384px, 100vw"
+              sizes="(min-width: 640px) 448px, 100vw"
               className="object-cover"
             />
           </div>
@@ -342,6 +342,18 @@ export default function TrialPage() {
                 </div>
               ))}
             </div>
+
+            <p className="mt-6 text-center text-[15px] text-ink-soft">
+              Total Value: <span className="font-bold text-ink">₹2,500/-</span>
+            </p>
+            <a
+              href={TRIAL_ENROLLMENT_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-4 block rounded-full bg-ink py-4 text-center text-[15px] font-bold text-[#FCD34D]"
+            >
+              Register Now @ Just ₹99
+            </a>
           </div>
         </section>
 
