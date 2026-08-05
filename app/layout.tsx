@@ -78,7 +78,6 @@ const jsonLd = {
       email: SITE.email,
       areaServed: "IN",
       priceRange: "$$",
-      sameAs: [SITE.instagram, SITE.youtube],
     },
     {
       "@type": "Person",

@@ -9,9 +9,6 @@ import {
   ChevronRight,
   MessageCircle,
   Phone,
-  Link2,
-  Camera,
-  PlayCircle,
   PersonStanding,
   Wind,
   Dumbbell,
@@ -484,25 +481,6 @@ export default function TrialPage() {
               <div className="mt-2 flex flex-col gap-1.5 text-[13px] text-ink-soft">
                 <a href="/about">About Us</a>
                 <a href="/contact">Contact Us</a>
-                <a href={SITE.youtube}>YouTube</a>
-              </div>
-              <p className="mt-4 text-[13px] font-bold text-ink">Discover more on :</p>
-              <div className="mt-2 flex gap-3">
-                <span className="flex h-9 w-9 items-center justify-center rounded-full bg-[#C2185B]/10 text-[#C2185B]">
-                  <Link2 size={16} aria-hidden="true" />
-                </span>
-                <a
-                  href={SITE.instagram}
-                  className="flex h-9 w-9 items-center justify-center rounded-full bg-[#C2185B]/10 text-[#C2185B]"
-                >
-                  <Camera size={16} aria-hidden="true" />
-                </a>
-                <a
-                  href={SITE.youtube}
-                  className="flex h-9 w-9 items-center justify-center rounded-full bg-[#C2185B]/10 text-[#C2185B]"
-                >
-                  <PlayCircle size={16} aria-hidden="true" />
-                </a>
               </div>
             </div>
           </div>

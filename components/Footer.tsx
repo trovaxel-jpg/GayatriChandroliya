@@ -1,4 +1,4 @@
-import { Camera, CirclePlay, Mail } from "lucide-react";
+import { Mail } from "lucide-react";
 import { SITE } from "@/lib/config";
 
 export function Footer() {
@@ -12,24 +12,6 @@ export function Footer() {
             flexibility, posture, calm, and consistency that lasts.
           </p>
           <div className="mt-6 flex items-center gap-4">
-            <a
-              href={SITE.instagram}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Follow us on Instagram"
-              className="flex h-10 w-10 items-center justify-center rounded-full border border-cream/20 transition-colors hover:border-cream/50"
-            >
-              <Camera size={17} aria-hidden="true" />
-            </a>
-            <a
-              href={SITE.youtube}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Subscribe on YouTube"
-              className="flex h-10 w-10 items-center justify-center rounded-full border border-cream/20 transition-colors hover:border-cream/50"
-            >
-              <CirclePlay size={17} aria-hidden="true" />
-            </a>
             <a
               href={`mailto:${SITE.email}`}
               aria-label="Email us"

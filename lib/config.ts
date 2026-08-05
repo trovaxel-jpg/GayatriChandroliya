@@ -43,11 +43,8 @@ export const SITE = {
   instructorAge: 48,
   yearsPracticing: 14,
   domain: "https://gayatrichandroliya.com",
-  email: "hello@gayatrichandroliya.com",
-  phone: "+91 00000 00000",
-  // ⚠️ Placeholder — replace 910000000000 with the real WhatsApp number (with country code, no + or spaces)
-  whatsapp: "https://wa.me/910000000000",
+  email: "yogawithgayatrichandroliya@gmail.com",
+  phone: "+91 95122 82210",
+  whatsapp: "https://wa.me/919512282210",
   city: "Your City, India",
-  instagram: "https://instagram.com/gayatrichandroliya",
-  youtube: "https://youtube.com/@gayatrichandroliya",
 };

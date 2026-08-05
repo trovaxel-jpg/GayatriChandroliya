@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Mail, Phone, MapPin, Link2, PlayCircle } from "lucide-react";
+import { Mail, Phone, MapPin } from "lucide-react";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { OrganicBlob, LeafMotif } from "@/components/Decorative";
@@ -14,11 +14,6 @@ const CONTACT_ITEMS = [
   { icon: Mail, label: SITE.email, href: `mailto:${SITE.email}` },
   { icon: Phone, label: SITE.phone, href: `tel:${SITE.phone.replace(/\s/g, "")}` },
   { icon: MapPin, label: SITE.city, href: undefined },
-];
-
-const SOCIAL_ITEMS = [
-  { icon: Link2, label: "Instagram", href: SITE.instagram },
-  { icon: PlayCircle, label: "YouTube", href: SITE.youtube },
 ];
 
 export default function ContactPage() {
@@ -44,7 +39,6 @@ export default function ContactPage() {
                 soon.
               </p>
 
-              {/* ⚠️ Placeholder contact details — replace with real ones */}
               <div className="mt-9 space-y-4">
                 {CONTACT_ITEMS.map((item) => {
                   const content = (
@@ -63,31 +57,6 @@ export default function ContactPage() {
                     <div key={item.label}>{content}</div>
                   );
                 })}
-              </div>
-
-              <p className="mt-6 text-[13px] italic text-ink-soft/60">
-                ⚠️ Email, phone, and city above are placeholders — send me the
-                real details whenever you have them.
-              </p>
-
-              <div className="mt-9">
-                <p className="text-[13px] font-semibold uppercase tracking-wide text-sage-deep">
-                  Discover more on
-                </p>
-                <div className="mt-3 flex gap-3">
-                  {SOCIAL_ITEMS.map((s) => (
-                    <a
-                      key={s.label}
-                      href={s.href}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      aria-label={s.label}
-                      className="flex h-11 w-11 items-center justify-center rounded-full bg-sage-deep/10 text-sage-deep transition-colors hover:bg-sage-deep hover:text-cream"
-                    >
-                      <s.icon size={19} />
-                    </a>
-                  ))}
-                </div>
               </div>
             </div>
 
