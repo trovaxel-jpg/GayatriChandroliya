@@ -17,6 +17,12 @@ function perMonth(price: number, months: number) {
   return Math.round(price / months);
 }
 
+export type PlanCheckoutUrls = {
+  oneMonth: string;
+  threeMonths: string;
+  sixMonths: string;
+};
+
 function PriceCard({
   duration,
   original,
@@ -77,9 +83,16 @@ function PriceCard({
   );
 }
 
-export function PricingSelector({ checkoutUrl }: { checkoutUrl: string }) {
-  const [selected, setSelected] = useState<string>("6 Months");
+export function PricingSelector({ checkoutUrls }: { checkoutUrls: PlanCheckoutUrls }) {
+  const [selected, setSelected] = useState<"6 Months" | "3 Months" | "1 Month">("6 Months");
   const [infoOpen, setInfoOpen] = useState(false);
+
+  const selectedUrl =
+    selected === "6 Months"
+      ? checkoutUrls.sixMonths
+      : selected === "3 Months"
+        ? checkoutUrls.threeMonths
+        : checkoutUrls.oneMonth;
 
   return (
     <div className="mx-auto max-w-md">
@@ -98,7 +111,7 @@ export function PricingSelector({ checkoutUrl }: { checkoutUrl: string }) {
             months={t.months}
             badge={t.badge}
             selected={selected === t.duration}
-            onSelect={() => setSelected(t.duration)}
+            onSelect={() => setSelected(t.duration as "6 Months" | "3 Months")}
           />
         ))}
       </div>
@@ -143,13 +156,13 @@ export function PricingSelector({ checkoutUrl }: { checkoutUrl: string }) {
           original={MONTHLY_TIER.original}
           price={MONTHLY_TIER.price}
           months={MONTHLY_TIER.months}
-          selected={selected === MONTHLY_TIER.duration}
-          onSelect={() => setSelected(MONTHLY_TIER.duration)}
+          selected={selected === "1 Month"}
+          onSelect={() => setSelected("1 Month")}
         />
       </div>
 
       <div className="mt-6">
-        <CTAButton href={checkoutUrl} className="w-full">
+        <CTAButton href={selectedUrl} className="w-full">
           Choose Your Plan
         </CTAButton>
       </div>

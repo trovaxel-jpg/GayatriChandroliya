@@ -11,15 +11,28 @@ export const ENROLLMENT_URL = "https://superprofile.bio/yourprofile";
 export const TRIAL_ENROLLMENT_URL = "https://superprofile.bio/e/GayatriMasterclass";
 
 // ---------------------------------------------------------------------------
-// ⚠️ PLACEHOLDER CHECKOUT LINKS — one per plan.
-// Each plan needs its OWN Superprofile product (Recurring Membership type,
-// same as we discussed for the trial). Once each is published, replace the
-// matching URL below — every pricing card for that plan reads from here.
+// Per-plan, per-duration checkout links.
+// Women's Wellness Yoga is live with real links. Weight Loss & Fitness and
+// Ageless Vitality still use a ⚠️ PLACEHOLDER link repeated across all three
+// durations — replace each with its real link once that product is created
+// on Superprofile (same pattern as Women's Wellness below).
 // ---------------------------------------------------------------------------
 export const PLAN_CHECKOUT_URLS = {
-  womensWellness: "https://superprofile.bio/yourprofile/womens-wellness",
-  weightLossFitness: "https://superprofile.bio/yourprofile/weight-loss-fitness",
-  agelessVitality: "https://superprofile.bio/yourprofile/ageless-vitality",
+  womensWellness: {
+    oneMonth: "https://superprofile.bio/e/WomensWellnessYoga1month",
+    threeMonths: "https://superprofile.bio/e/WomenWellnessYoga3Month",
+    sixMonths: "https://superprofile.bio/e/WomensWellnessYoga6months",
+  },
+  weightLossFitness: {
+    oneMonth: "https://superprofile.bio/yourprofile/weight-loss-fitness",
+    threeMonths: "https://superprofile.bio/yourprofile/weight-loss-fitness",
+    sixMonths: "https://superprofile.bio/yourprofile/weight-loss-fitness",
+  },
+  agelessVitality: {
+    oneMonth: "https://superprofile.bio/yourprofile/ageless-vitality",
+    threeMonths: "https://superprofile.bio/yourprofile/ageless-vitality",
+    sixMonths: "https://superprofile.bio/yourprofile/ageless-vitality",
+  },
 };
 
 // ---------------------------------------------------------------------------

@@ -12,7 +12,7 @@ export default function AgelessVitalityPlanPage() {
     <PlanPage
       title="Ageless Vitality Yoga"
       tagline="Stay flexible, energetic, and strong — at any age."
-      checkoutUrl={PLAN_CHECKOUT_URLS.agelessVitality}
+      checkoutUrls={PLAN_CHECKOUT_URLS.agelessVitality}
       photoSrc="/images/plan-ageless-vitality.png"
       photoPlaceholderLabel={`${SITE.instructorName} teaching an Ageless Vitality session — photo placeholder`}
       offerings={[

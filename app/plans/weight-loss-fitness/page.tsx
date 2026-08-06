@@ -12,7 +12,7 @@ export default function WeightLossFitnessPlanPage() {
     <PlanPage
       title="Weight Loss & Fitness Yoga"
       tagline="Build real strength and lose weight the sustainable way."
-      checkoutUrl={PLAN_CHECKOUT_URLS.weightLossFitness}
+      checkoutUrls={PLAN_CHECKOUT_URLS.weightLossFitness}
       photoSrc="/images/plan-weight-loss-fitness.png"
       photoPlaceholderLabel={`${SITE.instructorName} teaching a Weight Loss & Fitness session — photo placeholder`}
       offerings={[

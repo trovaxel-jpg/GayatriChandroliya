@@ -3,7 +3,7 @@ import { CalendarClock, Video, FileVideo, Users2 } from "lucide-react";
 import { Header } from "./Header";
 import { Footer } from "./Footer";
 import { CTAButton } from "./CTAButton";
-import { PricingSelector } from "./PricingSelector";
+import { PricingSelector, type PlanCheckoutUrls } from "./PricingSelector";
 import { BATCH_TIMING } from "@/lib/config";
 
 export type PlanTestimonial = {
@@ -17,7 +17,7 @@ export type PlanTestimonial = {
 export function PlanPage({
   title,
   tagline,
-  checkoutUrl,
+  checkoutUrls,
   offerings,
   testimonials,
   photoSrc,
@@ -25,7 +25,7 @@ export function PlanPage({
 }: {
   title: string;
   tagline: string;
-  checkoutUrl: string;
+  checkoutUrls: PlanCheckoutUrls;
   offerings: string[];
   testimonials: PlanTestimonial[];
   /** Path under /public/images — if omitted, a placeholder box is shown instead */
@@ -51,7 +51,7 @@ export function PlanPage({
         {/* Pricing — kept at the top, this is what mobile visitors see first */}
         <section className="py-8 md:py-10">
           <div className="container-page">
-            <PricingSelector checkoutUrl={checkoutUrl} />
+            <PricingSelector checkoutUrls={checkoutUrls} />
           </div>
         </section>
 
@@ -150,7 +150,7 @@ export function PlanPage({
               Ready to begin?
             </h2>
             <div className="mt-9 flex justify-center">
-              <CTAButton href={checkoutUrl} variant="inverse">
+              <CTAButton href={checkoutUrls.sixMonths} variant="inverse">
                 Choose Your Plan
               </CTAButton>
             </div>
