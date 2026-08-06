@@ -11,11 +11,7 @@ export const ENROLLMENT_URL = "https://superprofile.bio/yourprofile";
 export const TRIAL_ENROLLMENT_URL = "https://superprofile.bio/e/GayatriMasterclass";
 
 // ---------------------------------------------------------------------------
-// Per-plan, per-duration checkout links.
-// Women's Wellness Yoga is live with real links. Weight Loss & Fitness and
-// Ageless Vitality still use a ⚠️ PLACEHOLDER link repeated across all three
-// durations — replace each with its real link once that product is created
-// on Superprofile (same pattern as Women's Wellness below).
+// Per-plan, per-duration checkout links. All three plans are now live.
 // ---------------------------------------------------------------------------
 export const PLAN_CHECKOUT_URLS = {
   womensWellness: {
@@ -24,14 +20,14 @@ export const PLAN_CHECKOUT_URLS = {
     sixMonths: "https://superprofile.bio/e/WomensWellnessYoga6months",
   },
   weightLossFitness: {
-    oneMonth: "https://superprofile.bio/yourprofile/weight-loss-fitness",
-    threeMonths: "https://superprofile.bio/yourprofile/weight-loss-fitness",
-    sixMonths: "https://superprofile.bio/yourprofile/weight-loss-fitness",
+    oneMonth: "https://superprofile.bio/e/WeightLossFitnessYoga1Month",
+    threeMonths: "https://superprofile.bio/e/WeightLossFitnessYoga3months",
+    sixMonths: "https://superprofile.bio/e/WeightLossFitnessYoga6months",
   },
   agelessVitality: {
-    oneMonth: "https://superprofile.bio/yourprofile/ageless-vitality",
-    threeMonths: "https://superprofile.bio/yourprofile/ageless-vitality",
-    sixMonths: "https://superprofile.bio/yourprofile/ageless-vitality",
+    oneMonth: "https://superprofile.bio/e/AgelessVitalityYoga1month",
+    threeMonths: "https://superprofile.bio/e/AgelessVitalityYoga3months",
+    sixMonths: "https://superprofile.bio/e/AgelessVitalityYoga6months",
   },
 };
 
